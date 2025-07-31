@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国茶叶介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8C5E36',
+                        secondary: '#D4B59E',
+                        green: '#4D7C0F',
+                        red: '#DC2626',
+                        yellow: '#D97706',
+                        white: '#F3F4F6',
+                        dark: '#1F2937'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-primary text-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-2xl font-bold flex items-center">
+                <i class="fa fa-leaf mr-2"></i>中国茶文化
+            </h1>
+            <div class="hidden md:flex space-x-6">
+                <a href="#types" class="hover:text-secondary transition-colors">茶叶种类</a>
+                <a href="#brewing" class="hover:text-secondary transition-colors">冲泡方法</a>
+                <a href="#culture" class="hover:text-secondary transition-colors">历史文化</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero区域 -->
+    <header class="pt-24 pb-16 bg-gradient-to-br from-secondary to-primary text-white">
+        <div id="nfc-info" class="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white/90 text-primary px-4 py-2 rounded-full text-sm font-medium shadow-md">
+            <i class="fa fa-info-circle mr-1"></i>支持NFC功能，可通过NFC卡快速访问茶叶信息
+        </div>
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-shadow">中国茶叶</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">探索千年茶文化，品味中国传统茶饮的独特魅力</p>
+            <div class="mt-8">
+                <a href="#types" class="bg-white text-primary px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition-colors inline-flex items-center">
+                    了解茶叶种类 <i class="fa fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 茶叶种类部分 -->
+    <section id="types" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">茶叶种类</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 绿茶卡片 -->
+                <div class="bg-green-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fa fa-leaf text-6xl text-green opacity-70"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-green mb-3">绿茶</h3>
+                        <p class="text-gray-600 mb-4">不发酵茶，最大程度保留茶多酚与叶绿素，呈现「干茶绿、汤色绿、叶底绿」的三绿特征。</p>
+                        <h4 class="font-semibold text-gray-700 mb-2">核心品类：</h4>
+                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+                            <li>西湖龙井（浙江）</li>
+                            <li>洞庭碧螺春（江苏）</li>
+                            <li>黄山毛峰（安徽）</li>
+                            <li>信阳毛尖（河南）</li>
+                        </ul>
+                        <div class="bg-green-100 p-3 rounded-lg">
+                            <p class="text-sm text-green-800"><i class="fa fa-info-circle mr-1"></i> 风味：清香、豆香为主，口感鲜爽甘冽</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 红茶卡片 -->
+                <div class="bg-red-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-red-100 flex items-center justify-center">
+                        <i class="fa fa-fire text-6xl text-red opacity-70"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-red mb-3">红茶</h3>
+                        <p class="text-gray-600 mb-4">全发酵茶，茶叶中的茶多酚氧化成为茶红素，形成红汤红叶的品质特征。</p>
+                        <h4 class="font-semibold text-gray-700 mb-2">核心品类：</h4>
+                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+                            <li>祁门红茶（安徽）</li>
+                            <li>滇红（云南）</li>
+                            <li>正山小种（福建）</li>
+                        </ul>
+                        <div class="bg-red-100 p-3 rounded-lg">
+                            <p class="text-sm text-red-800"><i class="fa fa-info-circle mr-1"></i> 风味：香气似花似蜜，滋味醇厚甜</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 白茶卡片 -->
+                <div class="bg-yellow-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-yellow-100 flex items-center justify-center">
+                        <i class="fa fa-sun-o text-6xl text-yellow opacity-70"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-yellow mb-3">白茶</h3>
+                        <p class="text-gray-600 mb-4">微发酵茶，不炒不揉，仅经萎凋与干燥，形成「天然去雕饰」的质朴风格。</p>
+                        <h4 class="font-semibold text-gray-700 mb-2">核心品类：</h4>
+                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+                            <li>白毫银针（福鼎）</li>
+                            <li>白牡丹（政和）</li>
+                            <li>寿眉</li>
+                        </ul>
+                        <div class="bg-yellow-100 p-3 rounded-lg">
+                            <p class="text-sm text-yellow-800"><i class="fa fa-info-circle mr-1"></i> 特点：年份越久越显蜜香、枣香</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 黄茶卡片 -->
+                <div class="bg-yellow-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-yellow-100 flex items-center justify-center">
+                        <i class="fa fa-star text-6xl text-yellow opacity-70"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-yellow mb-3">黄茶</h3>
+                        <p class="text-gray-600 mb-4">轻发酵茶，芽叶细嫩，汤色黄绿，香气清雅，滋味鲜醇，略带熟栗香。</p>
+                        <h4 class="font-semibold text-gray-700 mb-2">核心品类：</h4>
+                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+                            <li>霍山黄芽（安徽）</li>
+                            <li>君山银针（湖南）</li>
+                            <li>蒙顶黄芽（四川）</li>
+                        </ul>
+                        <div class="bg-yellow-100 p-3 rounded-lg">
+                            <p class="text-sm text-yellow-800"><i class="fa fa-info-circle mr-1"></i> 工艺：独特的"闷黄"工艺形成独特风味</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 乌龙茶卡片 -->
+                <div class="bg-purple-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fa fa-coffee text-6xl text-purple-600 opacity-70"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-purple-600 mb-3">乌龙茶</h3>
+                        <p class="text-gray-600 mb-4">半发酵茶，兼具绿茶的清香和红茶醇厚，香气馥郁持久。</p>
+                        <h4 class="font-semibold text-gray-700 mb-2">核心品类：</h4>
+                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-1">
+                            <li>铁观音（福建）</li>
+                            <li>大红袍（福建）</li>
+                            <li>凤凰单枞（广东）</li>
+                        </ul>
+                        <div class="bg-purple-100 p-3 rounded-lg">
+                            <p class="text-sm text-purple-800"><i class="fa fa-info-circle mr-1"></i> 特点："七泡有余香"，耐冲泡</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 视频展示部分 -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">茶叶制作工艺</h2>
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="aspect-w-16 aspect-h-9">
+                    <video controls class="w-full h-full object-cover"
+                           poster="/images/tea-video-cover.jpg"
+                           preload="metadata">
+                        <source src="/videos/548b6dd97ea15cba8d1eaf02280e8a41.mp4" type="video/mp4">
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-dark mb-2">传统手工制茶工艺展示</h3>
+                    <p class="text-gray-600">这段视频展示了中国传统茶叶的制作全过程，从鲜叶采摘到最终成品的各个环节，让您深入了解中国茶文化的精髓。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 冲泡方法部分 -->
+    <section id="brewing" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">茶叶冲泡方法</h2>
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-primary mb-4">通用冲泡原则</h3>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fa fa-tint text-blue-500 mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">水质：</span>建议使用山泉水或纯净水，避免自来水中的氯气影响茶香
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-tint text-blue-500 mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">水温：</span>根据茶类调整，绿茶80-85℃，红茶90-95℃
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-tint text-blue-500 mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">茶具：</span>绿茶推荐玻璃杯/盖碗，红茶可用瓷壶或紫砂壶
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-primary/5 p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">绿茶冲泡步骤</h3>
+                        <ol class="space-y-4 text-gray-700">
+                            <li class="flex">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">1</span>
+                                <span>温杯后投入3-5g茶叶</span>
+                            </li>
+                            <li class="flex">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">2</span>
+                                <span>注入80-85℃的山泉水至七分满</span>
+                            </li>
+                            <li class="flex">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">3</span>
+                                <span>静置1-2分钟，观察茶叶舒展</span>
+                            </li>
+                            <li class="flex">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">4</span>
+                                <span>出汤品饮，建议不超过3泡</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 历史文化部分 -->
+    <section id="culture" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">茶叶历史文化</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="prose lg:prose-xl mx-auto">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        中国是茶的故乡，也是茶文化的发源地。茶叶在中国有着5000多年的历史，相传由神农氏发现。从古代的用药，到唐宋时期的普及，再到现代成为世界三大饮品之一，茶叶在中国文化中占据着重要地位。
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mt-4">
+                        茶文化融合了儒、道、佛三家思想，形成了独特的品饮艺术。从唐代陆羽的《茶经》到宋代的点茶技艺，再到明清时期的泡茶方法，中国茶文化不断发展演变，成为东方文化的重要组成部分。
+                    </p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow card-hover">
+                        <div class="text-primary text-3xl mb-4"><i class="fa fa-book"></i></div>
+                        <h3 class="font-bold text-xl mb-2">茶道精神</h3>
+                        <p class="text-gray-600">"和、敬、清、寂"的茶道理念体现了中国人对生活的态度和哲学思想</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow card-hover">
+                        <div class="text-primary text-3xl mb-4"><i class="fa fa-globe"></i></div>
+                        <h3 class="font-bold text-xl mb-2">茶叶之路</h3>
+                        <p class="text-gray-600">古代茶叶通过丝绸之路和茶马古道传播到世界各地，成为文化交流的纽带</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow card-hover">
+                        <div class="text-primary text-3xl mb-4"><i class="fa fa-cutlery"></i></div>
+                        <h3 class="font-bold text-xl mb-2">茶与生活</h3>
+                        <p class="text-gray-600">茶不仅是饮品，更融入中国人的日常生活，成为待客之道和社交礼仪</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold flex items-center">
+                        <i class="fa fa-leaf mr-2"></i>中国茶文化
+                    </h3>
+                    <p class="text-gray-300 mt-2">探索千年茶文化的魅力</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="bg-white/20 hover:bg-white/30 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fa fa-weixin"></i>
+                    </a>
+                    <a href="#" class="bg-white/20 hover:bg-white/30 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fa fa-weibo"></i>
+                    </a>
+                    <a href="#" class="bg-white/20 hover:bg-white/30 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-white/20 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2023 中国茶文化 | 探索茶叶的世界</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2');
+            }
+        });
+
+        // NFC功能实现
+        document.addEventListener('DOMContentLoaded', function() {
+            // 添加NFC状态提示元素
+            const nfcStatus = document.createElement('div');
+            nfcStatus.id = 'nfc-status';
+            nfcStatus.className = 'fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-2 rounded-full shadow-lg z-50 hidden';
+            document.body.appendChild(nfcStatus);
+
+            // 显示NFC状态消息
+            function showNfcMessage(message) {
+                const statusElement = document.getElementById('nfc-status');
+                statusElement.textContent = message;
+                statusElement.classList.remove('hidden');
+                clearTimeout(window.nfcTimeout);
+                window.nfcTimeout = setTimeout(() => {
+                    statusElement.classList.add('hidden');
+                }, 3000);
+            }
+
+            // 检查浏览器是否支持Web NFC API
+            if ('NDEFReader' in window) {
+                showNfcMessage('请将NFC卡靠近设备');
+
+                const reader = new NDEFReader();
+                try {
+                    reader.scan().then(() => {
+                        reader.addEventListener('reading', event => {
+                            const record = event.message.records[0];
+                            if (record.recordType === 'text') {
+                                const textDecoder = new TextDecoder(record.encoding || 'utf-8');
+                                const nfcData = textDecoder.decode(record.data);
+                                showNfcMessage(`已识别: ${nfcData}`);
+
+                                // 根据NFC数据滚动到对应茶叶部分
+                                const targetId = nfcData.toLowerCase();
+                                const targetElement = document.getElementById(targetId);
+                                if (targetElement) {
+                                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                                } else if (nfcData.includes('绿茶')) {
+                                    document.getElementById('types').scrollIntoView({ behavior: 'smooth' });
+                                } else if (nfcData.includes('红茶')) {
+                                    document.getElementById('types').scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }
+                        });
+                    }).catch(error => {
+                        showNfcMessage(`NFC错误: ${error.message}`);
+                    });
+                } catch (error) {
+                    showNfcMessage('NFC功能初始化失败');
+                }
+            } else {
+                showNfcMessage('您的浏览器不支持NFC功能');
+            }
+        });
+    </script>
+</body>
+</html>
